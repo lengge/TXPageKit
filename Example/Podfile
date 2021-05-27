@@ -4,6 +4,8 @@ platform :ios, '9.0'
 
 target 'TXPageKit_Example' do
   pod 'TXPageKit', :path => '../'
+  
+  pod 'HMSegmentedControl', '1.5.6'
 
   target 'TXPageKit_Tests' do
     inherit! :search_paths

@@ -1,0 +1,23 @@
+PODS:
+  - HMSegmentedControl (1.5.6)
+  - TXPageKit (0.1.0)
+
+DEPENDENCIES:
+  - HMSegmentedControl (= 1.5.6)
+  - TXPageKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - HMSegmentedControl
+
+EXTERNAL SOURCES:
+  TXPageKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
+  TXPageKit: f6bc2e3e446053a9ab223765803f2a7b3ddc41c4
+
+PODFILE CHECKSUM: abdf0be2de62760c17be8633e34f615c5953b5b6
+
+COCOAPODS: 1.9.1

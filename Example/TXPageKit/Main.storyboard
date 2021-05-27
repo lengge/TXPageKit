@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eGc-zY-PSx">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="UPI-G3-sP5">
+            <objects>
+                <navigationController id="eGc-zY-PSx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lTY-hP-2CV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="d3M-3E-aMy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivM-SJ-yKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1826" y="20"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TXPageKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBE-6V-Oof">
+                                <rect key="frame" x="144.5" y="104" width="86" height="30"/>
+                                <state key="normal" title="normal page"/>
+                                <connections>
+                                    <action selector="normalPageAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d23-L2-gj9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4q-GV-Uvf">
+                                <rect key="frame" x="128" y="159" width="119" height="30"/>
+                                <state key="normal" title="with header page"/>
+                                <connections>
+                                    <action selector="withHeaderPageAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pHq-em-QC0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sy-dh-g0f">
+                                <rect key="frame" x="110.5" y="214" width="154" height="30"/>
+                                <state key="normal" title="custom title view page"/>
+                                <connections>
+                                    <action selector="customTitleViewPageAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dBf-Gr-QXH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e4q-GV-Uvf" firstAttribute="top" secondItem="YBE-6V-Oof" secondAttribute="bottom" constant="25" id="1JS-IO-Ucw"/>
+                            <constraint firstItem="YBE-6V-Oof" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="60" id="Prv-vI-MSC"/>
+                            <constraint firstItem="e4q-GV-Uvf" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="S0s-Ca-ieH"/>
+                            <constraint firstItem="8sy-dh-g0f" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ns7-1f-oCI"/>
+                            <constraint firstItem="YBE-6V-Oof" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="q5I-lN-urV"/>
+                            <constraint firstItem="8sy-dh-g0f" firstAttribute="top" secondItem="e4q-GV-Uvf" secondAttribute="bottom" constant="25" id="yyn-vL-W2q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="YR0-if-eTe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1126" y="19"/>
+        </scene>
+    </scenes>
+</document>

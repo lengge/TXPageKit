@@ -1,0 +1,6 @@
+framework module TXPageKit {
+  umbrella header "TXPageKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

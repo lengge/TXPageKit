@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		789A5F9483FC2BA4EF0A58E5 /* Pods_TXPageKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B902A38CE656465C1EAA1 /* Pods_TXPageKit_Example.framework */; };
 		AC17895AF578B2CC98BCD71F /* Pods_TXPageKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 517A4C22D4CEC4884D85D84D /* Pods_TXPageKit_Tests.framework */; };
+		F575460C265F7755008A1E78 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754608265F7755008A1E78 /* PageViewController.swift */; };
+		F575460D265F7755008A1E78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754609265F7755008A1E78 /* ViewController.swift */; };
+		F575460E265F7755008A1E78 /* PageChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F575460A265F7755008A1E78 /* PageChildViewController.swift */; };
+		F575460F265F7755008A1E78 /* PageWithHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F575460B265F7755008A1E78 /* PageWithHeaderViewController.swift */; };
+		F5754613265F775C008A1E78 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5754612265F775C008A1E78 /* CustomTitleView.swift */; };
+		F5754617265F776A008A1E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5754616265F776A008A1E78 /* Main.storyboard */; };
+		F575461F265F79E0008A1E78 /* CustomTitleViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F575461E265F79E0008A1E78 /* CustomTitleViewPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,25 +33,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1321D4A45481767BF68E7F9D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1321D4A45481767BF68E7F9D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		294B902A38CE656465C1EAA1 /* Pods_TXPageKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TXPageKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38B4F5B33310F0D669131154 /* Pods-TXPageKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXPageKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-TXPageKit_Tests/Pods-TXPageKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		517A4C22D4CEC4884D85D84D /* Pods_TXPageKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TXPageKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* TXPageKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TXPageKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* TXPageKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TXPageKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6E587687C6ACF0C6A65B212E /* Pods-TXPageKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXPageKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TXPageKit_Tests/Pods-TXPageKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		824EAE07955B006A0CD63E9E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		824EAE07955B006A0CD63E9E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9120674CAB39222DFD5E65BF /* Pods-TXPageKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXPageKit_Example.release.xcconfig"; path = "Target Support Files/Pods-TXPageKit_Example/Pods-TXPageKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A225E6F6FEF771C865A3DA00 /* Pods-TXPageKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXPageKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-TXPageKit_Example/Pods-TXPageKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D53EA602F6545CE701D8311A /* TXPageKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TXPageKit.podspec; path = ../TXPageKit.podspec; sourceTree = "<group>"; };
+		D53EA602F6545CE701D8311A /* TXPageKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TXPageKit.podspec; path = ../TXPageKit.podspec; sourceTree = "<group>"; };
+		F5754608265F7755008A1E78 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F5754609265F7755008A1E78 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F575460A265F7755008A1E78 /* PageChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageChildViewController.swift; sourceTree = "<group>"; };
+		F575460B265F7755008A1E78 /* PageWithHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageWithHeaderViewController.swift; sourceTree = "<group>"; };
+		F5754612265F775C008A1E78 /* CustomTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		F5754616265F776A008A1E78 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F575461E265F79E0008A1E78 /* CustomTitleViewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleViewPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +112,14 @@
 		607FACD21AFB9204008FA782 /* Example for TXPageKit */ = {
 			isa = PBXGroup;
 			children = (
+				F5754616265F776A008A1E78 /* Main.storyboard */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				F5754612265F775C008A1E78 /* CustomTitleView.swift */,
+				F575460A265F7755008A1E78 /* PageChildViewController.swift */,
+				F5754608265F7755008A1E78 /* PageViewController.swift */,
+				F575461E265F79E0008A1E78 /* CustomTitleViewPageViewController.swift */,
+				F575460B265F7755008A1E78 /* PageWithHeaderViewController.swift */,
+				F5754609265F7755008A1E78 /* ViewController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -156,7 +171,6 @@
 				6E587687C6ACF0C6A65B212E /* Pods-TXPageKit_Tests.debug.xcconfig */,
 				38B4F5B33310F0D669131154 /* Pods-TXPageKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +227,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = K9Z9KA4X7C;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = K9Z9KA4X7C;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +243,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,7 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				F5754617265F776A008A1E78 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -291,10 +308,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TXPageKit_Example/Pods-TXPageKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/TXPageKit/TXPageKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TXPageKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,8 +350,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				F575461F265F79E0008A1E78 /* CustomTitleViewPageViewController.swift in Sources */,
+				F5754613265F775C008A1E78 /* CustomTitleView.swift in Sources */,
+				F575460E265F7755008A1E78 /* PageChildViewController.swift in Sources */,
+				F575460D265F7755008A1E78 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				F575460C265F7755008A1E78 /* PageViewController.swift in Sources */,
+				F575460F265F7755008A1E78 /* PageWithHeaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,14 +379,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -478,6 +494,7 @@
 			baseConfigurationReference = A225E6F6FEF771C865A3DA00 /* Pods-TXPageKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K9Z9KA4X7C;
 				INFOPLIST_FILE = TXPageKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +510,7 @@
 			baseConfigurationReference = 9120674CAB39222DFD5E65BF /* Pods-TXPageKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K9Z9KA4X7C;
 				INFOPLIST_FILE = TXPageKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6E587687C6ACF0C6A65B212E /* Pods-TXPageKit_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = K9Z9KA4X7C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38B4F5B33310F0D669131154 /* Pods-TXPageKit_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = K9Z9KA4X7C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
