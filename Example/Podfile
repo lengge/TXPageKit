@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'TXPageKit_Example' do
+  pod 'TXPageKit', :path => '../'
+
+  target 'TXPageKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
