@@ -178,7 +178,7 @@ private extension PageContentView {
     func initSubviews() {
         for child in children {
             child.setScrollViewTag(MoreGestureRecognitionScrollView.shouldRecognizeScrollViewTag)
-            parent?.addChildViewController(child)
+            parent?.addChild(child)
         }
         
         collectionView.frame = bounds

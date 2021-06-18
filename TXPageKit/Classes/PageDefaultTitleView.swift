@@ -7,6 +7,28 @@
 
 import UIKit
 
+class PageDefaultTitleItemView: UIView {
+    let titleLabel = UILabel()
+    let iconImageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(titleLabel)
+        addSubview(iconImageView)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        iconImageView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 5).isActive = true
+        iconImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 /// 默认TitleView
 /// 如果需要改变样式，设置完相关属性后，调用reloadData()
 public class PageDefaultTitleView: UIView {
@@ -29,6 +51,10 @@ public class PageDefaultTitleView: UIView {
     /// Item之间间距，leftToRight分布时使用
     public var itemSpace: CGFloat = 30;
     public var titles: [String]?
+    /// 默认图标，如果需要图标，元素必须和titles元素个数相同
+    public var normalIcons: [UIImage?]?
+    /// 选中图标，如果需要图标，元素必须和titles元素个数相同
+    public var selectedIcons: [UIImage?]?
     
     public var topLineColor: CGColor? {
         get { return topLineLayer.backgroundColor }
@@ -52,7 +78,7 @@ public class PageDefaultTitleView: UIView {
     
     private weak var _delegate: PageTitleViewDelegate?
     private var _selectedIndex: Int = 0
-    private var items: [UILabel] = []
+    private var items: [PageDefaultTitleItemView] = []
     /// 计算的文本最大宽度集合
     private var textMaxWidths: [CGFloat] = []
     private var textTotalWidth: CGFloat = 0
@@ -145,14 +171,21 @@ public class PageDefaultTitleView: UIView {
     }
     
     private func didSelectIndex(_ index: Int) {
-        if index == selectedIndex { return }
+        if index < 0 || index == selectedIndex { return }
         
         let oldItem = items[selectedIndex]
         let newItem = items[index]
-        newItem.textColor = selectedColor
-        newItem.font = selectedFont
-        oldItem.textColor = normalColor
-        oldItem.font = normalFont
+        newItem.titleLabel.textColor = selectedColor
+        newItem.titleLabel.font = selectedFont
+        oldItem.titleLabel.textColor = normalColor
+        oldItem.titleLabel.font = normalFont
+        
+        if let normalIcons = normalIcons, normalIcons.count == titles?.count {
+            oldItem.iconImageView.image = normalIcons[selectedIndex]
+        }
+        if let selectedIcons = selectedIcons, selectedIcons.count == titles?.count {
+            newItem.iconImageView.image = selectedIcons[index]
+        }
         
         _selectedIndex = index
 
@@ -179,6 +212,14 @@ extension PageDefaultTitleView {
     func reloadData() {
         guard let titles = titles, titles.count > 0 else { return }
         
+        if let normalIcons = normalIcons, normalIcons.count != titles.count {
+            fatalError("normalIcons count must be equal to titles count")
+        }
+        
+        if let selectedIcons = selectedIcons, selectedIcons.count != titles.count {
+            fatalError("selectedIcons count must be equal to titles count")
+        }
+        
         // 清除旧的Item视图
         for item in items {
             item.removeFromSuperview()
@@ -188,29 +229,35 @@ extension PageDefaultTitleView {
         // 添加新的Item视图
         var textTotalWidth: CGFloat = 0
         for (index, title) in titles.enumerated() {
-            let label = UILabel()
-            label.tag = index
-            label.text = title
-            label.textAlignment = .center
-            label.isUserInteractionEnabled = true
+            let itemView = PageDefaultTitleItemView(frame: .zero)
+            itemView.tag = index
+            itemView.titleLabel.text = title
+            itemView.titleLabel.textAlignment = .center
+            itemView.isUserInteractionEnabled = true
             
             if index == self.selectedIndex {
-                label.textColor = selectedColor
-                label.font = selectedFont
+                itemView.titleLabel.textColor = selectedColor
+                itemView.titleLabel.font = selectedFont
+                if let selectedIcons = selectedIcons, selectedIcons.count == titles.count {
+                    itemView.iconImageView.image = selectedIcons[index]
+                }
             } else {
-                label.textColor = normalColor
-                label.font = normalFont
+                itemView.titleLabel.textColor = normalColor
+                itemView.titleLabel.font = normalFont
+                if let normalIcons = normalIcons, normalIcons.count == titles.count {
+                    itemView.iconImageView.image = normalIcons[index]
+                }
             }
             
             if distribution == .autoFill {
-                addSubview(label)
+                addSubview(itemView)
             } else {
-                scrollView.addSubview(label)
+                scrollView.addSubview(itemView)
             }
             
-            items.append(label)
+            items.append(itemView)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemTapAction(_:)))
-            label.addGestureRecognizer(tapGesture)
+            itemView.addGestureRecognizer(tapGesture)
             
             // 计算文字宽度，布局时使用
             let font = selectedFont.pointSize > normalFont.pointSize ? selectedFont : normalFont

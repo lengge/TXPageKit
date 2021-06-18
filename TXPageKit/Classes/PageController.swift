@@ -148,7 +148,6 @@ open class PageController: UIViewController,
         if let contentView = contentView {
             let contentFrame = self.pageController(self, preferredFrameForContentView: contentView)
             contentView.frame = contentFrame
-            
         }
     }
     
@@ -157,7 +156,7 @@ open class PageController: UIViewController,
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let headerView = headerView else { return }
         let offsetY = scrollView.contentOffset.y
-        let maxOffsetY = headerView.frame.maxY
+        let maxOffsetY = headerView.frame.height
         if offsetY >= maxOffsetY {
             scrollView.contentOffset = CGPoint(x: 0, y: maxOffsetY)
             if self.scrollView.isAllowScroll {
@@ -255,7 +254,7 @@ open class PageController: UIViewController,
     open func pageContentView(_ pageContentView: PageContentView, didEnter viewController: PageChildController) {
         guard let headerView = headerView else { return }
         let offsetY = scrollView.contentOffset.y
-        let maxOffsetY = headerView.frame.maxY
+        let maxOffsetY = headerView.frame.height
         if offsetY < maxOffsetY {
             viewController.contentOffset = .zero
         }
@@ -266,18 +265,13 @@ open class PageController: UIViewController,
 
 private extension PageController {
     func initSubviews() {
+        view.addSubview(UIView())
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        if #available(iOS 11.0, *) {
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        } else {
-            // Fallback on earlier versions
-            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
-            scrollView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
-        }
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         self.delegate = self
         self.dataSource = self
     }
@@ -330,7 +324,7 @@ public extension PageController {
             let headerFrame = dataSource?.pageController(self, preferredFrameForHeaderView: headerView)
             headerView.frame = headerFrame!
             scrollView.addSubview(headerView)
-            contentSizeHeight = max(contentSizeHeight, headerView.frame.maxY)
+            contentSizeHeight = max(contentSizeHeight, headerView.frame.maxY) + view.bounds.height * 0.5
             
             scrollView.contentSize = CGSize(width: 0, height: contentSizeHeight)
             scrollView.isAllowScroll = true
